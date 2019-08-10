@@ -43,3 +43,21 @@
 11，查看历史命令（可用来找回回退之前的文件）
 		git reflog
 
+12，查看文本文件内容
+		cat filename.txt
+
+13，撤销 工作区 的修改
+		git checkout -- filename.txt
+	让这个文件回到最近一次 git commit 或 git add 时的状态
+
+14，把暂存区的修改撤销掉（unstage），重新放回工作区：
+		git reset HEAD filename.txt		（git reset HEAD <file>可以把暂存区的修改撤销掉（unstage），重新放回工作区）
+		git checkout -- filename.txt
+
+15，删除文件
+		git rm test.txt
+		git commit -m "remove test.txt"
+
+16，恢复文件
+		git checkout -- test.txt
+	git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
