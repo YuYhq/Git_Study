@@ -16,3 +16,9 @@
 五，提交文件到仓库
 		git commit -m "提交说明"
 	-m后面输入的是本次提交的说明
+
+六，查看仓库状态
+		git status
+
+七，查看文件变化
+		git diff filename.txt
