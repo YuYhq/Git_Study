@@ -1,16 +1,13 @@
-提交修改和提交新文件是一样的两步	（工作区 > 缓存区 > 版本区）
-	add 到暂存区（stage（或者叫index））
-	commit 提交到当前分支
-	需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改
-
-
 1，安装 Git
+	https://git-scm.com/
+	官网下载安装
 
 2，设置用户
 	打开 Git Bash，输入：
 		git config --global user.name XiaoYu
 		git config --global user.email 970683504@qq.com
-	--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+	global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，
+	当然也可以对某个仓库指定不同的用户名和Email地址。
 
 3，创建版本库
 	创建一个 文件夹，在文件夹中打开 Git Bash，输入：
@@ -28,6 +25,11 @@
 
 7，查看文件变化
 		git diff filename.txt
+	
+	提交修改和提交新文件是一样的两步	（工作区 > 缓存区 > 版本区）
+	add 到暂存区（stage（或者叫index））
+	commit 提交到当前分支
+	需要提交的文件修改，统统放到缓存区(add)，然后，一次性提交暂存区的所有修改(commit)
 
 8，查看提交日志
 		git log		（复杂展示）
