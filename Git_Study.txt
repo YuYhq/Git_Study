@@ -61,3 +61,47 @@
 16，恢复文件
 		git checkout -- test.txt
 	git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”
+
+
+远程仓库：
+1，打开Git Bash），创建SSH Key：
+		ssh-keygen -t rsa -C "youremail@example.com"
+	一路回车，使用默认值
+	在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对
+	id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+
+2，添加公钥到GitHub
+	登陆GitHub，打开“Account settings”，“SSH Keys”页面：
+	然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容：
+	Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
+	GitHub允许你添加多个Key，可多个电脑提交（公司电脑、家里电脑）
+
+3，在GitHub上创建一个远程仓库
+		Create a new repository
+		填写仓库名和描述
+		在GitHub上的这个learngit仓库还是空的，可以从这个仓库克隆出新的仓库，
+		也可以把一个已有的本地仓库与之关联，然后，把本地仓库的内容推送到GitHub仓库。
+		
+		复制仓库的SSH地址：git@github.com:YuYhq/GitTest.git
+
+4，关联远程仓库与本地仓库
+	在本地的learngit仓库下运行命令：
+		git remote add origin git@github.com:YuYhq/GitTest.git
+	第一次使用Git的clone或者push命令连接GitHub时，会得到一个警告
+	这是因为Git使用SSH连接，而SSH连接在第一次验证GitHub服务器的Key时，
+	需要你确认GitHub的Key的指纹信息是否真的来自GitHub的服务器，输入yes回车即可。
+	
+	远程库的名字就是origin，这是Git默认
+
+5，把本地库的所有内容推送到远程库
+		git push -u origin master	（把当前分支master推送到远程）
+	们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，
+	还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
+	推送成功后，可以立刻在GitHub页面中看到远程库的内容已经和本地一模一样
+
+6，把本地master分支的最新修改推送至GitHub
+		git push origin master
+
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
