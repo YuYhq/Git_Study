@@ -1,0 +1,18 @@
+一，安装 Git
+
+二，设置用户
+	打开 Git Bash，输入：
+		git config --global user.name XiaoYu
+		git config --global user.email 970683504@qq.com
+	--global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。
+
+三，创建版本库
+	创建一个 文件夹，在文件夹中打开 Git Bash，输入：
+		git init
+
+四，添加文件到仓库
+		git add filename.txt
+
+五，提交文件到仓库
+		git commit -m "提交说明"
+	-m后面输入的是本次提交的说明
