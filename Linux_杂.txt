@@ -1,0 +1,58 @@
+linux 编译： qmake CONFIG+=debug	生成工程文件（Makefile） 然后 make 编译
+gdb sysconfig	启动gdb调试
+l	查看源码
+b 	xxx.cpp:1234	设置断点（可连续设置多个）
+r	运行
+n	单步执行
+s	下一步但是会进入子函数
+c	执行到下一断点
+p 	qname.toStdString().c_str()	打印变量名
+q	表示程序退出
+
+如果linux中一个程序（如sldraw）运行时崩溃，则可用bt命令打印崩溃时的堆栈信息：gdb sldraw 运行，崩溃时 输入 bt 回车；
+
+
+
+cmake 利用CMakeLists.txt生成不同平台的工程文件
+
+GNU
+GNU不是一个公司名，而是一个软件项目名。它开发了许多应用程序。
+GCC
+GCC全称是 GNU C Compiler, 最早的时候就是一个c编译器。但是后来因为这个项目里边集成了更多其他不同语言的编译器，
+GCC就代表 the GNU Compiler Collection，所以表示一堆编译器的合集。
+G++
+G++则是GCC的c++编译器
+
+GNU计划，又称革奴计划，它的目标是创建一套完全自由的操作系统。
+从1983年开始的GNU计划致力于开发一个自由并且完整的类Unix操作系统，包括软件开发工具和各种应用程序。
+Linux的历史是和GNU紧密联系在一起的。
+到1991年Linux内核发布的时候，GNU已经几乎完成了除了系统内核之外的各种必备软件的开发。在Linus Torvalds和其他开发人员的努力下，GNU组件可
+以运行于Linux内核之上。整个内核是基于GNU通用公共许可，也就是GPL(General Pubic License)的，但是Linux内核并不是GNU 计划的一部分。
+Linux只是一个操作系统内核而已，而GNU提供了大量的自由软件来丰富在其之上各种应用程序。
+
+linux 系统下 make 是一个命令工具（GNU），它解释 Makefile 中的指令（应该说是规则）。在 Makefile文件中描述了整个工程所有文件的编译顺序、编译规则。
+Visual C++的nmake
+	
+	
+MinGW 是 编译器
+MinGW，即 Minimalist GNU For Windows。它是一些头文件和端口库的集合，该集合允许人们在没有第三方动态链接库的情况下使用 GCC（GNU Compiler C）
+产生 Windows32 程序。
+实际上 MinGW 并不是一个 C/C++ 编译器，而是一套 GNU 工具集合。除开 GCC (GNU 编译器集合) 以外，MinGW 还包含有一些其他的 GNU 程序开发工具 
+(比如 gawk bison 等等)。
+开发 MinGW 是为了那些不喜欢工作在 Linux(FreeBSD) 操作系统而留在 Windows 的人提供一套符合 GNU 的 GNU 工作环境。
+
+
+
+tar -czf 目标名（rtdbdata-0714.tgz） 文件名（rtdbdata）		//压缩文件或文件夹
+
+tar -xvf file.tar //解压 tar包
+
+ln -s 源文件 目标软链接文件		//为库文件创建 软链接
+
+diff -c a.txt b.txt linux终端中的文本比较命令
+
+find / -name 文件名		全局搜索
+find / -name *文件名*	星号可表示任意字符
+
+useradd iesdev		新建iesdev用户
+passwd iesdev		修改iesdev用户密码
